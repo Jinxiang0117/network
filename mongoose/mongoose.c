@@ -677,7 +677,7 @@ int cs_log_print_prefix(enum cs_log_level level, const char *file, int ln) {
     struct mg_str fl = mg_mk_str(s_file_level), ps = MG_MK_STR_N(prefix, pl);
     struct mg_str k, v;
     while ((fl = mg_next_comma_list_entry_n(fl, &k, &v)).p != NULL) {
-      bool yes = !(!mg_str_starts_with(ps, k) || v.len == 0);
+      int yes = !(!mg_str_starts_with(ps, k) || v.len == 0);
       if (!yes) continue;
       pll = (enum cs_log_level)(*v.p - '0');
       break;

@@ -229,7 +229,7 @@
 #include <process.h>
 
 #if _MSC_VER < 1700
-typedef int bool;
+//typedef int bool; bool is system keyword on cpp , bool keyword undefine on c 
 #else
 #include <stdbool.h>
 #endif
